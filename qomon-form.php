@@ -83,3 +83,65 @@ if (!function_exists('wpqomon_add_form_shortcode')) {
 }
 
 add_shortcode('qomon-form', 'wpqomon_add_form_shortcode');
+
+
+/**
+ * Add Qomon admin page in tools submenu
+ */
+// Add page contents
+if (!function_exists('wpqomon_admin_page_contents')) {
+
+	function wpqomon_admin_page_contents()
+	{
+		$qomon_form_page = '
+<h1>Welcome to my custom admin page.</h1>
+<br/>
+
+<h2>Utiliser le plugin WordPress</h2>
+<p>Si votre site utilise WordPress, vous pouvez ajouter le plugin Qomon form. </p>
+<p>Pour cela, allez dans&nbsp;<em>Extensions &gt; Ajouter </em>à partir du&nbsp;menu latéral. Vous pourrez alors utiliser la barre de recherche pour trouver le plugin. Cliquer sur installer, puis une fois fait, activer.</p>
+<br/>
+
+<h3>I. Ajout grâce au bloc Qomon Form</h3>
+<p>Une fois activé vous pourrez ajouter un formulaire sur votre page en utilisant un bloc Qomon Form : </p>
+<img style="width:288px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-block-search.png' . '">
+<p>Le bloc s’affichera, vous permettant d’y ajouter l’id de votre formulaire :</p>
+<img style="width:576px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-block.png' . '">
+<p>Une fois la page mise à jour le formulaire correspondant s’affichera :</p>
+<img style="width:576px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-example.png' . '">
+<br/>
+<br/>
+
+<h3>II. Ajout grâce au shortcode [qomon-form]</h3><p>De la même façon vous pouvez ajouter un bloc shortcode :</p>
+<img style="width:288px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-shortcode.png' . '">
+<p>Une fois celui-ci sur la page il faudra écrire ce code [qomon-form id=my-form-id] dans le bloc, my-form-id sera à remplacer par l’id de votre formulaire : </p>
+<img style="width:576px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-shortcode-filled.png' . '">
+<p>Une fois la page mise à jour le formulaire correspondant s’affichera :</p>
+<img style="width:576px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-example.png' . '">
+	';
+
+		echo $qomon_form_page;
+	}
+}
+
+// Add page to tools submenu
+if (!function_exists('wpqomon_admin_page_contents')) {
+	function wpqomon_add_qomon_admin_submenu()
+	{
+		add_management_page(
+			'Qomon Plugin',
+			//page title
+			'Qomon Plugin',
+			//menu title
+			'edit_themes',
+			//capability,
+			'qomon-plugin',
+			//menu slug
+			'wpqomon_admin_page_contents',
+			//callback function
+			null
+			//position
+		);
+	}
+}
+add_action('admin_menu', 'wpqomon_add_qomon_admin_submenu');
