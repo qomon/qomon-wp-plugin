@@ -10,8 +10,8 @@
 	"supports": {
 		"html": false
 	},
-	"textdomain": "qomon-form",
-	"editorScript": "file:./index.js",
+	"textdomain": "qomon",
+	"editorScript": "file:./qomon-form-block/index.js",
 	"attributes": {
 		"base_id": {
 			"type": "string"

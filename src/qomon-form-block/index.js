@@ -10,7 +10,7 @@ import { registerBlockType } from "@wordpress/blocks";
  */
 import edit from "./edit";
 import save from "./save";
-import metadata from "./block.json";
+import metadata from "../block.json";
 
 /**
  * Every block starts by registering a new block type definition.

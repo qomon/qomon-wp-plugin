@@ -1,12 +1,12 @@
 <?php
 /**
- * Qomon Form
+ * Qomon
  *
  * @author            Qomon
  * @license           GPL-2.0-or-later
  *
  * @wordpress-plugin
- * Plugin Name:       Qomon Form
+ * Plugin Name:       Qomon
  * Description:       Easily insert your Qomon form in your site. By adding a shortcode [qomon-form] or even by adding a custom block created by Qomon.
  * Requires at least: 6.1
  * Requires PHP:      7.0
@@ -15,7 +15,7 @@
  * Author URI:        https://qomon.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       qomon-form
+ * Text Domain:       qomon
  */
 
 
@@ -88,50 +88,53 @@ add_shortcode('qomon-form', 'wpqomon_add_form_shortcode');
 /**
  * Add Qomon admin page in tools submenu
  */
-// Add page contents
+// Add admin page contents
 if (!function_exists('wpqomon_admin_page_contents')) {
 
 	function wpqomon_admin_page_contents()
 	{
 		$qomon_form_page = '
-<h1>Welcome to my custom admin page.</h1>
-<br/>
+<article style="padding: 12px;">
+<h1><img style="width:40px; margin-right: 16px; vertical-align: middle;" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-pink-shorted.svg' . '">Bienvenue sur Qomon pour WordPress</h1>
 
-<h2>Utiliser le plugin WordPress</h2>
-<p>Si votre site utilise WordPress, vous pouvez ajouter le plugin Qomon form. </p>
-<p>Pour cela, allez dans&nbsp;<em>Extensions &gt; Ajouter </em>à partir du&nbsp;menu latéral. Vous pourrez alors utiliser la barre de recherche pour trouver le plugin. Cliquer sur installer, puis une fois fait, activer.</p>
-<br/>
+<p><a href="https://www.qomon.com" target="_blank">Qomon</a> est une organisation qui aide les causes, ONGs, campagnes, élu(e)s, mouvements & entreprises à engager plus de citoyens, mener des actions concrètes et amplifier leur impact.</p>
+<p>Qomon permet entre autre de créer des formulaires, d’en personnaliser les couleurs et les champs, pour consulter l’avis de vos contacts ou permettre à de nouveaux contacts, par exemple, de s’abonner à votre newsletter.</p>
+<p>Intégrez le formulaire facilement à votre site Internet grâce à ce plugin ! </p>
 
-<h3>I. Ajout grâce au bloc Qomon Form</h3>
+<h2 style="margin-top: 32px; font-size: 20px;">Utiliser le plugin WordPress</h2>
+<p>Pour ajouter un formulaire Qomon à votre page vous avez 2 options : </p>
+
+<h3 style="margin-top: 24px;">I. Ajout grâce au bloc Qomon Form</h3>
 <p>Une fois activé vous pourrez ajouter un formulaire sur votre page en utilisant un bloc Qomon Form : </p>
-<img style="width:288px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-block-search.png' . '">
+<img style="width:244px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/block-search.png' . '">
 <p>Le bloc s’affichera, vous permettant d’y ajouter l’id de votre formulaire :</p>
-<img style="width:576px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-block.png' . '">
-<p>Une fois la page mise à jour le formulaire correspondant s’affichera :</p>
-<img style="width:576px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-example.png' . '">
-<br/>
-<br/>
+<img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/block.png' . '">
+<p>La page publiée ou en mode aperçu affichera le formulaire correspondant :</p>
+<img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/form-example.png' . '">
 
-<h3>II. Ajout grâce au shortcode [qomon-form]</h3><p>De la même façon vous pouvez ajouter un bloc shortcode :</p>
-<img style="width:288px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-shortcode.png' . '">
+<h3 style="margin-top: 24px;">II. Ajout grâce au shortcode [qomon-form]</h3><p>De la même façon vous pouvez ajouter un bloc shortcode :</p>
+<img style="width:244px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/shortcode.png' . '">
 <p>Une fois celui-ci sur la page il faudra écrire ce code [qomon-form id=my-form-id] dans le bloc, my-form-id sera à remplacer par l’id de votre formulaire : </p>
-<img style="width:576px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-shortcode-filled.png' . '">
-<p>Une fois la page mise à jour le formulaire correspondant s’affichera :</p>
-<img style="width:576px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form-example.png' . '">
-	';
+<img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/shortcode-filled.png' . '">
+<p>La page publiée ou en mode aperçu affichera le formulaire correspondant :</p>
+<img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/form-example.png' . '">
+
+<p>Votre formulaire est maintenant disponible, vos signataires peuvent remplir le formulaire !</p>
+<p>Pour aller plus loin dans la personnalisation de celui-ci, ou pour toute aide concernant le plugin, vous pouvez consulter <a href="https://help.qomon.com/fr/articles/7439238-comment-integrer-un-formulaire-sur-mon-site-internet" target="_blank">cette page</a>.</p>
+</article>';
 
 		echo $qomon_form_page;
 	}
 }
 
-// Add page to tools submenu
-if (!function_exists('wpqomon_admin_page_contents')) {
+// Add admin page to tools submenu
+if (!function_exists('wpqomon_add_qomon_admin_submenu')) {
 	function wpqomon_add_qomon_admin_submenu()
 	{
 		add_management_page(
 			'Qomon Plugin',
 			//page title
-			'Qomon Plugin',
+			'<img style="width:16px; margin-right: 4px; vertical-align: middle;" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-white-shorted.svg' . '"> Qomon Plugin',
 			//menu title
 			'edit_themes',
 			//capability,
