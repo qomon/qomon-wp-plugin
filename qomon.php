@@ -18,6 +18,17 @@
  * Text Domain:       qomon
  */
 
+/**
+ * Load translations
+ */
+if (!function_exists('wpqomon_load_translations')) {
+	function wpqomon_load_translations()
+	{
+		load_plugin_textdomain('qomon', FALSE, 'qomon/languages/');
+	}
+}
+add_action('plugins_loaded', 'wpqomon_load_translations');
+
 
 /**
  * Add the script that converts a div.qomon-form[data-base_id] into a Qomon form with the corresponding base_id
@@ -94,33 +105,35 @@ if (!function_exists('wpqomon_admin_page_contents')) {
 	function wpqomon_admin_page_contents()
 	{
 		$qomon_form_page = '
-<article style="padding: 12px;">
-<h1><img style="width:40px; margin-right: 16px; vertical-align: middle;" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-pink-shorted.svg' . '">Bienvenue sur Qomon pour WordPress</h1>
+<article style="padding: 12px;max-width:1000px;">
+<h1><img style="width:40px; margin-right: 16px; vertical-align: middle;" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-pink-shorted.svg' . '">' . __('Welcome to Qomon for WordPress', 'qomon') . '</h1>
 
-<p><a href="https://www.qomon.com" target="_blank">Qomon</a> est une organisation qui aide les causes, ONGs, campagnes, élu(e)s, mouvements & entreprises à engager plus de citoyens, mener des actions concrètes et amplifier leur impact.</p>
-<p>Qomon permet entre autre de créer des formulaires, d’en personnaliser les couleurs et les champs, pour consulter l’avis de vos contacts ou permettre à de nouveaux contacts, par exemple, de s’abonner à votre newsletter.</p>
-<p>Intégrez le formulaire facilement à votre site Internet grâce à ce plugin ! </p>
+<p><a href="' . __('https://www.qomon.com', 'qomon') . '" target="_blank">Qomon</a>' . __(' is an organization that helps causes, NGOs, campaigns, elected officials, movements & businesses engage more citizens, take concrete action and amplify their impact.', 'qomon') . '</p>
+<p>' . __('Qomon allows, among other things, to create forms, customize their colors and fields, to consult the opinion of your contacts or allow new contacts, for example, to subscribe to your newsletter.', 'qomon') . '</p>
+<p>' . __('Integrate the form easily into your website with this plugin! ', 'qomon') . '</p>
+<p>' . __('If you are not a Qomon customer yet, and would like to use this feature, you can get more information and request a demo', 'qomon') . ' <a href="' . __('https://www.qomon.com', 'qomon') . '" target="_blank">' . __('here', 'qomon') . '</a>.</p>
 
-<h2 style="margin-top: 32px; font-size: 20px;">Utiliser le plugin WordPress</h2>
-<p>Pour ajouter un formulaire Qomon à votre page vous avez 2 options : </p>
+<h2 style="margin-top: 32px; font-size: 20px;">' . __('Using the WordPress plugin', 'qomon') . '</h2>
+<p>' . __('To add a Qomon form to your page you have 2 options: ', 'qomon') . '</p>
 
-<h3 style="margin-top: 24px;">I. Ajout grâce au bloc Qomon Form</h3>
-<p>Une fois activé vous pourrez ajouter un formulaire sur votre page en utilisant un bloc Qomon Form : </p>
+<h3 style="margin-top: 24px;">' . __('I. Adding through the Qomon Form Block', 'qomon') . '</h3>
+<p>' . __('Once activated you will be able to add a form to your page using a Qomon Form Block: ', 'qomon') . '</p>
 <img style="width:244px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/block-search.png' . '">
-<p>Le bloc s’affichera, vous permettant d’y ajouter l’id de votre formulaire :</p>
+<p>' . __('The block will appear, allowing you to add the id of your form to it:', 'qomon') . '</p>
 <img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/block.png' . '">
-<p>La page publiée ou en mode aperçu affichera le formulaire correspondant :</p>
+<p>' . __('The published or previewed page will display the corresponding form:', 'qomon') . '</p>
 <img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/form-example.png' . '">
 
-<h3 style="margin-top: 24px;">II. Ajout grâce au shortcode [qomon-form]</h3><p>De la même façon vous pouvez ajouter un bloc shortcode :</p>
+<h3 style="margin-top: 24px;">' . __('II. Adding through the shortcode [qomon-form]', 'qomon') . '</h3>
+<p>' . __('In the same way you can add a shortcode block:', 'qomon') . '</p>
 <img style="width:244px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/shortcode.png' . '">
-<p>Une fois celui-ci sur la page il faudra écrire ce code [qomon-form id=my-form-id] dans le bloc, my-form-id sera à remplacer par l’id de votre formulaire : </p>
+<p>' . __('Once this one on the page it will be necessary to write this code [qomon-form id=my-form-id] in the block, my-form-id will be to replace by the id of your form:', 'qomon') . '</p>
 <img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/shortcode-filled.png' . '">
-<p>La page publiée ou en mode aperçu affichera le formulaire correspondant :</p>
+<p>' . __('The published or previewed page will display the corresponding form:', 'qomon') . '</p>
 <img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/form-example.png' . '">
 
-<p>Votre formulaire est maintenant disponible, vos signataires peuvent remplir le formulaire !</p>
-<p>Pour aller plus loin dans la personnalisation de celui-ci, ou pour toute aide concernant le plugin, vous pouvez consulter <a href="https://help.qomon.com/fr/articles/7439238-comment-integrer-un-formulaire-sur-mon-site-internet" target="_blank">cette page</a>.</p>
+<p>' . __('Your form is now available, your signatories can fill out the form!', 'qomon') . '</p>
+<p>' . __('To go further in the customization of this one, or for any help concerning the plugin, you can consult', 'qomon') . ' <a href="' . __('https://help.qomon.com/en/articles/7439238-how-can-i-integrate-a-qomon-form-on-my-website', 'qomon') . '" target="_blank">' . __('this page', 'qomon') . '</a>.</p>
 </article>';
 
 		echo $qomon_form_page;

@@ -28,7 +28,7 @@ export default function Edit({ attributes, setAttributes }) {
 		<div {...useBlockProps()}>
 			{<BlockControls />}
 			<TextControl
-				label={`Qomon ${__("form")} ID`}
+				label={__("Qomon form ID", "qomon")}
 				value={attributes.base_id}
 				onChange={(val) => setAttributes({ base_id: val })}
 			/>
