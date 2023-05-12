@@ -144,10 +144,10 @@ if (!function_exists('wpqomon_admin_page_contents')) {
 if (!function_exists('wpqomon_add_qomon_admin_submenu')) {
 	function wpqomon_add_qomon_admin_submenu()
 	{
-		add_management_page(
+		add_menu_page(
 			'Qomon Plugin',
 			//page title
-			'<img style="width:16px; margin-right: 4px; vertical-align: middle;" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-white-shorted.svg' . '"> Qomon Plugin',
+			'Qomon',
 			//menu title
 			'edit_themes',
 			//capability,
@@ -155,6 +155,12 @@ if (!function_exists('wpqomon_add_qomon_admin_submenu')) {
 			//menu slug
 			'wpqomon_admin_page_contents',
 			//callback function
+			'' . 'data:image/svg+xml;base64,' . base64_encode('
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve"  width="20" height="auto" viewBox="0 0 512 512" style="fill:#a7aaad" role="img" aria-hidden="true" focusable="false">
+			<path d="M255.292 0C112.719 0 0 113.196 0 255.304C0 385.598 93.7125 491.672 218.269 509.382V385.268C190.126 376.747 165.485 359.37 148.01 335.721C130.535 312.071 121.16 283.413 121.279 254.007C121.279 179.628 181.223 115.884 256 115.884C329.338 115.884 390.743 179.557 390.743 254.007C390.747 269.977 387.937 285.823 382.443 300.819L328.748 247.923L245.223 334.164L295.639 384.56L387.23 476.178L423.073 512L509.31 425.782L473.938 390.927C498.982 350.136 512.162 303.171 511.998 255.304C511.998 113.055 398.525 0 255.292 0Z"/>
+			</svg>
+			') . '',
+			// icon
 			null
 			//position
 		);
