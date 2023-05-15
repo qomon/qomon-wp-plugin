@@ -62,7 +62,7 @@ if (is_admin()) {
 			<h3 style="margin-top: 24px;">' . __('II. Adding through the shortcode [qomon-form]', 'qomon') . '</h3>
 			<p>' . __('In the same way you can add a shortcode block:', 'qomon') . '</p>
 			<img style="width:244px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/shortcode.png' . '">
-			<p>' . __('Once this one on the page it will be necessary to write this code [qomon-form id=my-form-id] in the block, my-form-id will be to replace by the id of your form:', 'qomon') . '</p>
+			<p>' . __('Once this block is on the page it will be necessary to write this code [qomon-form id=my-form-id] in the block, my-form-id will be to replace by the id of your form:', 'qomon') . '</p>
 			<img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/shortcode-filled.png' . '">
 			<p>' . __('The published or previewed page will display the corresponding form:', 'qomon') . '</p>
 			<img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/form-example.png' . '">

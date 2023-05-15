@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Qomon 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/qomon\n"
-"POT-Creation-Date: 2023-05-12T15:42:15+00:00\n"
-"PO-Revision-Date: 2023-05-12 17:44+0200\n"
+"POT-Creation-Date: 2023-05-15T12:17:05+00:00\n"
+"PO-Revision-Date: 2023-05-15 14:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -20,6 +20,11 @@ msgstr ""
 msgid "Qomon"
 msgstr "Qomon"
 
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://qomon.com"
+msgstr "https://fr.qomon.com/"
+
 #. Description of the plugin
 msgid ""
 "Easily insert your Qomon form in your site. By adding a shortcode [qomon-"
@@ -29,19 +34,15 @@ msgstr ""
 "code court [qomon-form] ou même en ajoutant un bloc personnalisé créé par "
 "Qomon."
 
-#. Author URI of the plugin
-msgid "https://qomon.com"
-msgstr "https://fr.qomon.com/"
-
-#: qomon.php:109
+#: qomon.php:47
 msgid "Welcome to Qomon for WordPress"
 msgstr "Bienvenue sur Qomon pour WordPress"
 
-#: qomon.php:111 qomon.php:114
+#: qomon.php:49 qomon.php:52
 msgid "https://www.qomon.com"
 msgstr "https://fr.qomon.com/"
 
-#: qomon.php:111
+#: qomon.php:49
 msgid ""
 " is an organization that helps causes, NGOs, campaigns, elected officials, "
 "movements & businesses engage more citizens, take concrete action and "
@@ -51,7 +52,7 @@ msgstr ""
 "mouvements & entreprises à engager plus de citoyens, mener des actions "
 "concrètes et amplifier leur impact."
 
-#: qomon.php:112
+#: qomon.php:50
 msgid ""
 "Qomon allows, among other things, to create forms, customize their colors "
 "and fields, to consult the opinion of your contacts or allow new contacts, "
@@ -61,12 +62,12 @@ msgstr ""
 "couleurs et les champs, pour consulter l’avis de vos contacts ou permettre à "
 "de nouveaux contacts, par exemple, de s’abonner à votre newsletter."
 
-#: qomon.php:113
+#: qomon.php:51
 msgid "Integrate the form easily into your website with this plugin! "
 msgstr ""
 "Intégrez le formulaire facilement à votre site Internet grâce à ce plugin ! "
 
-#: qomon.php:114
+#: qomon.php:52
 msgid ""
 "If you are not a Qomon customer yet, and would like to use this feature, you "
 "can get more information and request a demo"
@@ -74,23 +75,23 @@ msgstr ""
 "Si vous n’êtes pas encore client Qomon, et que vous souhaitez utiliser cette "
 "fonctionnalité, vous pouvez obtenir plus d’informations et demander une démo"
 
-#: qomon.php:114
+#: qomon.php:52
 msgid "here"
 msgstr "ici"
 
-#: qomon.php:116
+#: qomon.php:54
 msgid "Using the WordPress plugin"
 msgstr "Utiliser le plugin WordPress"
 
-#: qomon.php:117
+#: qomon.php:55
 msgid "To add a Qomon form to your page you have 2 options: "
 msgstr "Pour ajouter un formulaire Qomon à votre page vous avez 2 options : "
 
-#: qomon.php:119
+#: qomon.php:57
 msgid "I. Adding through the Qomon Form Block"
 msgstr "I. Ajout grâce au bloc Qomon Form"
 
-#: qomon.php:120
+#: qomon.php:58
 msgid ""
 "Once activated you will be able to add a form to your page using a Qomon "
 "Form Block: "
@@ -98,41 +99,41 @@ msgstr ""
 "Une fois activé vous pourrez ajouter un formulaire sur votre page en "
 "utilisant un bloc Qomon Form : "
 
-#: qomon.php:122
+#: qomon.php:60
 msgid "The block will appear, allowing you to add the id of your form to it:"
 msgstr ""
 "Le bloc s’affichera, vous permettant d’y ajouter l’id de votre formulaire :"
 
-#: qomon.php:124 qomon.php:132
+#: qomon.php:62 qomon.php:70
 msgid "The published or previewed page will display the corresponding form:"
 msgstr ""
 "La page publiée ou en mode aperçu affichera le formulaire correspondant :"
 
-#: qomon.php:127
+#: qomon.php:65
 msgid "II. Adding through the shortcode [qomon-form]"
 msgstr "II. Ajout grâce au code court [qomon-form]"
 
-#: qomon.php:128
+#: qomon.php:66
 msgid "In the same way you can add a shortcode block:"
 msgstr "De la même façon vous pouvez ajouter un bloc shortcode :"
 
-#: qomon.php:130
+#: qomon.php:68
 msgid ""
-"Once this one on the page it will be necessary to write this code [qomon-"
-"form id=my-form-id] in the block, my-form-id will be to replace by the id of "
-"your form:"
+"Once this block is on the page it will be necessary to write this code "
+"[qomon-form id=my-form-id] in the block, my-form-id will be to replace by "
+"the id of your form:"
 msgstr ""
 "Une fois celui-ci sur la page il faudra écrire ce code [qomon-form id=my-"
 "form-id] dans le bloc, my-form-id sera à remplacer par l’id de votre "
 "formulaire :"
 
-#: qomon.php:135
+#: qomon.php:73
 msgid "Your form is now available, your signatories can fill out the form!"
 msgstr ""
 "Votre formulaire est maintenant disponible, vos signataires peuvent remplir "
 "le formulaire !"
 
-#: qomon.php:136
+#: qomon.php:74
 msgid ""
 "To go further in the customization of this one, or for any help concerning "
 "the plugin, you can consult"
@@ -140,7 +141,7 @@ msgstr ""
 "Pour aller plus loin dans la personnalisation de celui-ci, ou pour toute "
 "aide concernant le plugin, vous pouvez consulter"
 
-#: qomon.php:136
+#: qomon.php:74
 msgid ""
 "https://help.qomon.com/en/articles/7439238-how-can-i-integrate-a-qomon-form-"
 "on-my-website"
@@ -148,12 +149,12 @@ msgstr ""
 "https://help.qomon.com/fr/articles/7439238-comment-integrer-un-formulaire-"
 "sur-mon-site-internet"
 
-#: qomon.php:136
+#: qomon.php:74
 msgid "this page"
 msgstr "cette page"
 
-#: build/qomon-form-block/index.js:51 src/qomon-form-block/edit.js:31
-#: build/qomon-form-block/index.js:31
+#: build/qomon-form-block/index.js:47 src/qomon-form-block/edit.js:25
+#: build/qomon-form-block/index.js:25
 msgid "Qomon form ID"
 msgstr "ID du formulaire Qomon"
 

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-12T15:42:15+00:00\n"
+"POT-Creation-Date: 2023-05-15T12:17:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: qomon\n"
@@ -19,99 +19,100 @@ msgstr ""
 msgid "Qomon"
 msgstr ""
 
-#. Description of the plugin
-msgid "Easily insert your Qomon form in your site. By adding a shortcode [qomon-form] or even by adding a custom block created by Qomon."
-msgstr ""
-
+#. Plugin URI of the plugin
 #. Author URI of the plugin
 msgid "https://qomon.com"
 msgstr ""
 
-#: qomon.php:109
+#. Description of the plugin
+msgid "Easily insert your Qomon form in your site. By adding a shortcode [qomon-form] or even by adding a custom block created by Qomon."
+msgstr ""
+
+#: qomon.php:47
 msgid "Welcome to Qomon for WordPress"
 msgstr ""
 
-#: qomon.php:111
-#: qomon.php:114
+#: qomon.php:49
+#: qomon.php:52
 msgid "https://www.qomon.com"
 msgstr ""
 
-#: qomon.php:111
+#: qomon.php:49
 msgid " is an organization that helps causes, NGOs, campaigns, elected officials, movements & businesses engage more citizens, take concrete action and amplify their impact."
 msgstr ""
 
-#: qomon.php:112
+#: qomon.php:50
 msgid "Qomon allows, among other things, to create forms, customize their colors and fields, to consult the opinion of your contacts or allow new contacts, for example, to subscribe to your newsletter."
 msgstr ""
 
-#: qomon.php:113
+#: qomon.php:51
 msgid "Integrate the form easily into your website with this plugin! "
 msgstr ""
 
-#: qomon.php:114
+#: qomon.php:52
 msgid "If you are not a Qomon customer yet, and would like to use this feature, you can get more information and request a demo"
 msgstr ""
 
-#: qomon.php:114
+#: qomon.php:52
 msgid "here"
 msgstr ""
 
-#: qomon.php:116
+#: qomon.php:54
 msgid "Using the WordPress plugin"
 msgstr ""
 
-#: qomon.php:117
+#: qomon.php:55
 msgid "To add a Qomon form to your page you have 2 options: "
 msgstr ""
 
-#: qomon.php:119
+#: qomon.php:57
 msgid "I. Adding through the Qomon Form Block"
 msgstr ""
 
-#: qomon.php:120
+#: qomon.php:58
 msgid "Once activated you will be able to add a form to your page using a Qomon Form Block: "
 msgstr ""
 
-#: qomon.php:122
+#: qomon.php:60
 msgid "The block will appear, allowing you to add the id of your form to it:"
 msgstr ""
 
-#: qomon.php:124
-#: qomon.php:132
+#: qomon.php:62
+#: qomon.php:70
 msgid "The published or previewed page will display the corresponding form:"
 msgstr ""
 
-#: qomon.php:127
+#: qomon.php:65
 msgid "II. Adding through the shortcode [qomon-form]"
 msgstr ""
 
-#: qomon.php:128
+#: qomon.php:66
 msgid "In the same way you can add a shortcode block:"
 msgstr ""
 
-#: qomon.php:130
-msgid "Once this one on the page it will be necessary to write this code [qomon-form id=my-form-id] in the block, my-form-id will be to replace by the id of your form:"
+#: qomon.php:68
+msgid "Once this block is on the page it will be necessary to write this code [qomon-form id=my-form-id] in the block, my-form-id will be to replace by the id of your form:"
 msgstr ""
 
-#: qomon.php:135
+#: qomon.php:73
 msgid "Your form is now available, your signatories can fill out the form!"
 msgstr ""
 
-#: qomon.php:136
+#: qomon.php:74
 msgid "To go further in the customization of this one, or for any help concerning the plugin, you can consult"
 msgstr ""
 
-#: qomon.php:136
+#: qomon.php:74
 msgid "https://help.qomon.com/en/articles/7439238-how-can-i-integrate-a-qomon-form-on-my-website"
 msgstr ""
 
-#: qomon.php:136
+#: qomon.php:74
 msgid "this page"
 msgstr ""
 
-#: build/qomon-form-block/index.js:51
-#: src/qomon-form-block/edit.js:31
-#: build/qomon-form-block/index.js:31
+#: build/qomon-form-block/index.js:47
+#: src/qomon-form-block/edit.js:25
+#: build/qomon-form-block/index.js:25
 msgid "Qomon form ID"
 msgstr ""
 
