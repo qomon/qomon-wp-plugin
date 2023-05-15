@@ -9,11 +9,5 @@
  */
 
 export default function save({ attributes }) {
-	return (
-		<div
-			class="qomon-form"
-			data-base_id={attributes.base_id}
-			data-env={attributes.env}
-		></div>
-	);
+	return <div class="qomon-form" data-base_id={attributes.base_id}></div>;
 }

@@ -18,12 +18,6 @@ import { useBlockProps, BlockControls } from "@wordpress/block-editor";
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	const isTestEnv = true;
-
-	if (isTestEnv) {
-		attributes.env = "cdn-form-test.qomon.org";
-	}
-
 	return (
 		<div {...useBlockProps()}>
 			{<BlockControls />}
