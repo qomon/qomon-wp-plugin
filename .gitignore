@@ -31,6 +31,6 @@ node_modules/
 
 package-lock.json
 
-build
+/build
 
 .DS_Store

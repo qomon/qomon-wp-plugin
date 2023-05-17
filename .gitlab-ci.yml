@@ -19,9 +19,10 @@ build:
   script:
     - pnpm install
     - pnpm plugin-zip
-  artifacts:
-    paths:
-      - ./qomon.zip
+  # artifacts:
+  #   paths:
+  #     - ./qomon.zip
+  #   expire_in: 1 week
 
 upload:
   stage: upload
