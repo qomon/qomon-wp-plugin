@@ -20,11 +20,8 @@ build:
     - pnpm install
     - pnpm plugin-zip
   artifacts:
-    untracked: true
-    exclude:
-      - "/build"
-      - "node_modules"
-      - "package-lock.json"
+    paths:
+      - ./qomon.zip
     expire_in: 1 week
 
 upload:
