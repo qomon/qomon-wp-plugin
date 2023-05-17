@@ -1,13 +1,14 @@
 image: registry.gitlab.com/quorumsco/dev-ops/docker-images/frontend-team/docker:20.10.21
 
 stages:
+  - build
   - upload
 
 services:
   - docker:20.10.21-dind
 
-upload-embed:
-  stage: upload
+build:
+  stage: build
 
   rules:
     - changes:
@@ -15,6 +16,15 @@ upload-embed:
     - when: manual
       # variables:
       #   DOPPLER_TOKEN: $DOPPLER_TOKEN_PROD
+  script:
+    - pnpm install
+    - pnpm plugin-zip
+  artifacts:
+    paths:
+      - ./qomon.zip
+
+upload:
+  stage: upload
 
   variables:
     DOPPLER_TOKEN: $DOPPLER_TOKEN_INTE
@@ -34,6 +44,4 @@ upload-embed:
     - aws configure set region fr-par
 
   script:
-    - pnpm install
-    - pnpm plugin-zip
-    - aws --endpoint-url https://s3.fr-par.scw.cloud s3 cp ./qomon.zip s3://$BUCKET_NAME/plugin/v1/qomon.zip --metadata-directive REPLACE --acl public-read --cache-control no-cache
+    - aws --endpoint-url https://s3.fr-par.scw.cloud s3 cp ./qomon.zip s3://$BUCKET_NAME/download/v1.0.0/qomon.zip --metadata-directive REPLACE --acl public-read --cache-control no-cache
