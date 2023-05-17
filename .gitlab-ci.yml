@@ -11,8 +11,8 @@ build:
   stage: build
 
   rules:
-    - changes:
-        - qomon.zip
+    # - changes:
+    #     - qomon.zip
     - when: manual
       # variables:
       #   DOPPLER_TOKEN: $DOPPLER_TOKEN_PROD
