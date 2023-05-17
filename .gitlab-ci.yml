@@ -18,6 +18,7 @@ build:
       #   DOPPLER_TOKEN: $DOPPLER_TOKEN_PROD
   script:
     - pnpm install
+    - pnpm build
     - pnpm plugin-zip
   artifacts:
     paths:
