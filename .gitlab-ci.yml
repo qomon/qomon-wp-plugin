@@ -28,9 +28,10 @@ upload:
 
   variables:
     DOPPLER_TOKEN: $DOPPLER_TOKEN_INTE
-    PLUGIN_VERSION: $(awk ' /(Version:)/{print $3}' qomon.php)
 
   before_script:
+    # Retrieve plugin version from qomon.php header
+    - export PLUGIN_VERSION=$(awk ' /(Version:)/{print $3}' qomon.php)
     # Retrieve variables from doppler according env
     - apk add --no-cache curl gnupg
     - curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh | sh
