@@ -57,8 +57,16 @@ upload:
 publish:
   stage: publish
 
+  variables:
+    GITHUB_USER: $GITHUB_USER
+
+  before_script:
+    - ssh-keygen -t ed25519 -C "$GITHUB_USER"
+    - eval "$(ssh-agent -s)"
+    - ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
   script:
     - git clone git@github.com:qomon/qomon-wp-plugin.git
     - git add .
-    - git commit -m "new release"
+    - git commit -m "chore(release) new version"
     - git push github HEAD:master
