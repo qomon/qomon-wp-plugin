@@ -12,8 +12,7 @@ build:
 
   rules:
     - when: manual
-      # variables:
-      #   DOPPLER_TOKEN: $DOPPLER_TOKEN_PROD
+
   script:
     - pnpm install
     - pnpm build
@@ -25,6 +24,11 @@ build:
 
 upload:
   stage: upload
+
+  rules:
+    - if: $CI_COMMIT_REF_NAME == 'feat/ci'
+      variables:
+        DOPPLER_TOKEN: $DOPPLER_TOKEN_PROD
 
   variables:
     DOPPLER_TOKEN: $DOPPLER_TOKEN_INTE
