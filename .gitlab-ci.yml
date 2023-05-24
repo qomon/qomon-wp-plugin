@@ -26,7 +26,7 @@ upload:
   stage: upload
 
   rules:
-    - if: $CI_COMMIT_REF_NAME == 'feat/ci'
+    - if: $CI_COMMIT_REF_NAME == 'master'
       variables:
         DOPPLER_TOKEN: $DOPPLER_TOKEN_PROD
 
