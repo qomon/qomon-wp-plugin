@@ -58,15 +58,12 @@ publish:
   stage: publish
 
   variables:
-    SSH_GITHUB_KEY: $SSH_GITHUB_KEY
+    GITHUB_USER: $GITHUB_USER
 
   before_script:
-    - "command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )"
-    - eval $(ssh-agent -s)
-    - chmod 400 "$SSH_GITHUB_KEY"
-    - ssh-add "$SSH_GITHUB_KEY"
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
+    - ssh-keygen -t ed25519 -C "$GITHUB_USER"
+    - echo | echo | echo | eval "$(ssh-agent -s)"
+    - ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
   script:
     - git clone git@github.com:qomon/qomon-wp-plugin.git
