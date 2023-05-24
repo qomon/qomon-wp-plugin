@@ -15,6 +15,7 @@
  * Author URI:        https://qomon.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Update URI:        https://s3.fr-par.scw.cloud/wordpress.qomon.org/download/v1.0.0/qomon.zip
  * Text Domain:       qomon
  */
 
@@ -154,7 +155,7 @@ if (is_admin()) {
 	/**
 	 * The [qomon-form] shortcode.
 	 *
-	 * Accepts a id and will display a Qomon form with the corresponding base_id.
+	 * Accepts an id and will display a Qomon form with the corresponding base_id.
 	 *
 	 * @param array  $atts    Shortcode attributes. Default empty. Example: [qomon-form id=5652feb3-bc2a-4c0d-ba75-e5f68997f308]
 	 * @return string Shortcode output.
