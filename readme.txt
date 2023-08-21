@@ -2,7 +2,7 @@
 Contributors:      qomon
 Donate link:       https://qomon.com
 Tags:              block, form, qomon
-Tested up to:      6.1
+Tested up to:      6.3
 Stable tag:        1.0.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -12,11 +12,13 @@ Easily insert your Qomon Form in your site.
 
 == Description ==
 
-Qomon is an organization that helps causes, NGOs, campaigns, elected officials, movements & businesses engage more citizens, take concrete action and amplify their impact.
+Qomon is a Software as a Service (SaaS) platform that assists organizations by offering a range of features designed to enhance their operations. 
 
-Qomon allows, among other things, to create forms, customize their colors and fields, to consult the opinion of your contacts or allow new contacts, for example, to subscribe to your newsletter.
+The Qomon plugin, for instance, provides a service that allows Qomon users to seamlessly integrate a form created within the qomon.app application onto their WordPress site. 
 
-Integrate the form easily into your website with this plugin!
+To access this functionality, having a Qomon account and having previously designed a form are prerequisites. To effectively utilize the Qomon plugin's capabilities for displaying forms, it's essential to obtain a unique form_id generated exclusively by Qomon. This form_id serves as a crucial identifier that enables the plugin to retrieve and present the designated form on your WordPress site. This mechanism ensures a seamless integration between the qomon.app application and the plugin, allowing for the effortless display of your chosen form.
+
+This plugin leverages a script developed by Qomon, enabling the generation of an embedded form directly within the webpage.
 
 ### INTEGRATIONS
 
