@@ -19,6 +19,12 @@
  */
 
 
+/** 
+ * Exit if plugin accessed directly 
+ */
+if (!defined('ABSPATH'))
+	exit;
+
 if (is_admin()) {
 	/**
 	 * Load translations
@@ -26,7 +32,7 @@ if (is_admin()) {
 	if (!function_exists('wpqomon_load_translations')) {
 		function wpqomon_load_translations()
 		{
-			load_plugin_textdomain('qomon', FALSE, 'qomon/languages/');
+			load_plugin_textdomain('qomon', '', 'qomon/languages/');
 		}
 	}
 	add_action('plugins_loaded', 'wpqomon_load_translations');
@@ -40,38 +46,50 @@ if (is_admin()) {
 
 		function wpqomon_admin_page_contents()
 		{
-			$qomon_form_page = '<article style="padding: 12px;max-width:1000px;">
-			<h1><img style="width:40px; margin-right: 16px; vertical-align: middle;" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-pink-shorted.svg' . '">' . __('Welcome to Qomon for WordPress', 'qomon') . '</h1>
+			echo '<article style="padding: 12px;max-width:1000px;">
+			<h1>
+			<img style="width:40px; margin-right: 16px; vertical-align: middle;" src="' . esc_url(plugin_dir_url(__FILE__) . 'public/images/qomon-pink-shorted.svg') . '">
+			' . esc_html(__('Welcome to Qomon for WordPress', 'qomon')) . '
+			</h1>
 
-			<p><a href="' . __('https://www.qomon.com', 'qomon') . '" target="_blank">Qomon</a>' . __(' is an organization that helps causes, NGOs, campaigns, elected officials, movements & businesses engage more citizens, take concrete action and amplify their impact.', 'qomon') . '</p>
-			<p>' . __('Qomon allows, among other things, to create forms, customize their colors and fields, to consult the opinion of your contacts or allow new contacts, for example, to subscribe to your newsletter.', 'qomon') . '</p>
-			<p>' . __('Integrate the form easily into your website with this plugin! ', 'qomon') . '</p>
-			<p>' . __('If you are not a Qomon customer yet, and would like to use this feature, you can get more information and request a demo', 'qomon') . ' <a href="' . __('https://www.qomon.com', 'qomon') . '" target="_blank">' . __('here', 'qomon') . '</a>.</p>
+			<p>
+			<a href="' . esc_url(__('https://www.qomon.com', 'qomon')) . '" target="_blank">' . esc_html("Qomon") . '</a>
+			' . esc_html(__(' is an organization that helps causes, NGOs, campaigns, elected officials, movements & businesses engage more citizens, take concrete action and amplify their impact.', 'qomon')) . '
+			</p>
+			<p>' . esc_html(__('Qomon allows, among other things, to create forms, customize their colors and fields, to consult the opinion of your contacts or allow new contacts, for example, to subscribe to your newsletter.', 'qomon')) . '</p>
+			<p>' . esc_html(__('Integrate the form easily into your website with this plugin! ', 'qomon')) . '</p>
+			<p>' . esc_html(__('If you are not a Qomon customer yet, and would like to use this feature, you can get more information and request a demo', 'qomon')) . ' 
+			<a href="' . esc_url(__('https://www.qomon.com', 'qomon')) . '" target="_blank">
+			' . esc_html(__('here', 'qomon')) . '</a>.
+			</p>
 
-			<h2 style="margin-top: 32px; font-size: 20px;">' . __('Using the WordPress plugin', 'qomon') . '</h2>
-			<p>' . __('To add a Qomon form to your page you have 2 options: ', 'qomon') . '</p>
+			<h2 style="margin-top: 32px; font-size: 20px;">' . esc_html(__('Using the WordPress plugin', 'qomon')) . '</h2>
+			<p>' . esc_html(__('To add a Qomon form to your page you have 2 options: ', 'qomon')) . '</p>
 
-			<h3 style="margin-top: 24px;">' . __('I. Adding through the Qomon Form Block', 'qomon') . '</h3>
-			<p>' . __('Once activated you will be able to add a form to your page using a Qomon Form Block: ', 'qomon') . '</p>
-			<img style="width:244px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/block-search.png' . '">
-			<p>' . __('The block will appear, allowing you to add the id of your form to it:', 'qomon') . '</p>
-			<img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/block.png' . '">
-			<p>' . __('The published or previewed page will display the corresponding form:', 'qomon') . '</p>
-			<img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/form-example.png' . '">
+			<h3 style="margin-top: 24px;">' . esc_html(__('I. Adding through the Qomon Form Block', 'qomon')) . '</h3>
+			<p>' . esc_html(__('Once activated you will be able to add a form to your page using a Qomon Form Block: ', 'qomon')) . '</p>
+			<img style="width:244px" src="' . esc_url(plugin_dir_url(__FILE__) . 'public/images/qomon-form/block-search.png') . '">
+			<p>' . esc_html(__('The block will appear, allowing you to add the id of your form to it:', 'qomon')) . '</p>
+			<img style="width:424px" src="' . esc_url(plugin_dir_url(__FILE__) . 'public/images/qomon-form/block.png') . '">
+			<p>' . esc_html(__('The published or previewed page will display the corresponding form:', 'qomon')) . '</p>
+			<img style="width:424px" src="' . esc_url(plugin_dir_url(__FILE__) . 'public/images/qomon-form/form-example.png') . '">
 
-			<h3 style="margin-top: 24px;">' . __('II. Adding through the shortcode [qomon-form]', 'qomon') . '</h3>
-			<p>' . __('In the same way you can add a shortcode block:', 'qomon') . '</p>
-			<img style="width:244px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/shortcode.png' . '">
-			<p>' . __('Once this block is on the page it will be necessary to write this code [qomon-form id=my-form-id] in the block, my-form-id will be to replace by the id of your form:', 'qomon') . '</p>
-			<img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/shortcode-filled.png' . '">
-			<p>' . __('The published or previewed page will display the corresponding form:', 'qomon') . '</p>
-			<img style="width:424px" src="' . plugin_dir_url(__FILE__) . 'public/images/qomon-form/form-example.png' . '">
+			<h3 style="margin-top: 24px;">' . esc_html(__('II. Adding through the shortcode [qomon-form]', 'qomon')) . '</h3>
+			<p>' . esc_html(__('In the same way you can add a shortcode block:', 'qomon')) . '</p>
+			<img style="width:244px" src="' . esc_url(plugin_dir_url(__FILE__) . 'public/images/qomon-form/shortcode.png') . '">
+			<p>' . esc_html(__('Once this block is on the page it will be necessary to write this code [qomon-form id=my-form-id] in the block, my-form-id will be to replace by the id of your form:', 'qomon')) . '</p>
+			<img style="width:424px" src="' . esc_url(plugin_dir_url(__FILE__) . 'public/images/qomon-form/shortcode-filled.png') . '">
+			<p>' . esc_html(__('The published or previewed page will display the corresponding form:', 'qomon')) . '</p>
+			<img style="width:424px" src="' . esc_url(plugin_dir_url(__FILE__) . 'public/images/qomon-form/form-example.png') . '">
 
-			<p>' . __('Your form is now available, your signatories can fill out the form!', 'qomon') . '</p>
-			<p>' . __('To go further in the customization of this one, or for any help concerning the plugin, you can consult', 'qomon') . ' <a href="' . __('https://help.qomon.com/en/articles/7439238-how-can-i-integrate-a-qomon-form-on-my-website', 'qomon') . '" target="_blank">' . __('this page', 'qomon') . '</a>.</p>
+			<p>' . esc_html(__('Your form is now available, your signatories can fill out the form!', 'qomon')) . '</p>
+			<p>' . esc_html(__('To go further in the customization of this one, or for any help concerning the plugin, you can consult', 'qomon')) . ' 
+			<a href="' . esc_url(__('https://help.qomon.com/en/articles/7439238-how-can-i-integrate-a-qomon-form-on-my-website', 'qomon')) . '" target="_blank">'
+				. esc_html(__('this page', 'qomon')) . '</a>.
+			 </p>
 			</article>';
 
-			echo $qomon_form_page;
+
 		}
 	}
 
@@ -127,7 +145,7 @@ if (is_admin()) {
 	if (!function_exists('wpqomon_add_form_cdn_script')) {
 		function wpqomon_add_form_cdn_script()
 		{
-			echo '<script type="text/javascript" async defer src="https://scripts.qomon.org/forms/v1/setup.js"></script>';
+			echo '<script type="text/javascript" async defer src="' . esc_url("https://scripts.qomon.org/forms/v1/setup.js") . '"></script>';
 		}
 	}
 	add_action('wp_head', 'wpqomon_add_form_cdn_script');
