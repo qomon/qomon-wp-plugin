@@ -15,7 +15,6 @@
  * Author URI:        https://qomon.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Update URI:        https://s3.fr-par.scw.cloud/wordpress.qomon.org/download/v1.0.0/qomon.zip
  * Text Domain:       qomon
  */
 
