@@ -1,4 +1,4 @@
-=== Qomon Form ===
+=== Qomon ===
 Contributors:      qomon
 Donate link:       https://qomon.com
 Tags:              block, form, qomon
@@ -8,13 +8,13 @@ License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP:      7.0
 
-Easily insert your Qomon Form in your site. 
+Easily insert your Qomon Form in your site.
 
 == Description ==
 
-Qomon is a Software as a Service (SaaS) platform that assists organizations by offering a range of features designed to enhance their operations. 
+Qomon is a Software as a Service (SaaS) platform that assists organizations by offering a range of features designed to enhance their operations.
 
-The Qomon plugin, for instance, provides a service that allows Qomon users to seamlessly integrate a form created within the qomon.app application onto their WordPress site. 
+The Qomon plugin, for instance, provides a service that allows Qomon users to seamlessly integrate a form created within the qomon.app application onto their WordPress site.
 
 To access this functionality, having a Qomon account and having previously designed a form are prerequisites. To effectively utilize the Qomon plugin's capabilities for displaying forms, it's essential to obtain a unique form_id generated exclusively by Qomon. This form_id serves as a crucial identifier that enables the plugin to retrieve and present the designated form on your WordPress site. This mechanism ensures a seamless integration between the qomon.app application and the plugin, allowing for the effortless display of your chosen form.
 
@@ -58,5 +58,5 @@ You can find it at this path: https://help.qomon.com/en/articles/7439238-how-can
 
 == Changelog ==
 
-= 0.1.0 =
-* Plugin released
+= 1.0.0 =
+* Plugin released 🎉
