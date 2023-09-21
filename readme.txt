@@ -1,4 +1,4 @@
-=== Qomon Form ===
+=== Qomon ===
 Contributors:      qomon
 Donate link:       https://qomon.com
 Tags:              block, form, qomon
@@ -58,5 +58,5 @@ You can find it at this path: https://help.qomon.com/en/articles/7439238-how-can
 
 == Changelog ==
 
-= 0.1.0 =
+= 1.0.0 =
 * Plugin released
