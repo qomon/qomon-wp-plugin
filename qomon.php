@@ -71,6 +71,8 @@ if (is_admin()) {
 			<img style="width:244px" src="' . esc_url(plugin_dir_url(__FILE__) . 'public/images/qomon-form/block-search.png') . '">
 			<p>' . esc_html(__('The block will appear, allowing you to add the id of your form to it:', 'qomon')) . '</p>
 			<img style="width:424px" src="' . esc_url(plugin_dir_url(__FILE__) . 'public/images/qomon-form/block.png') . '">
+			<p>' . esc_html(__('Specify your form type:', 'qomon')) . '</p>
+			<img style="width:424px" src="' . esc_url(plugin_dir_url(__FILE__) . 'public/images/qomon-form/petition-type.png') . '">
 			<p>' . esc_html(__('The published or previewed page will display the corresponding form:', 'qomon')) . '</p>
 			<img style="width:424px" src="' . esc_url(plugin_dir_url(__FILE__) . 'public/images/qomon-form/form-example.png') . '">
 
@@ -171,8 +173,13 @@ if (is_admin()) {
 				$tag
 			);
 
+
+			// form_type
+			$form_type = isset($qomon_shortcode_atts['form-type']) ? esc_html($qomon_shortcode_atts['form-type']) : '';
+
 			// generate form container
-			$qomon_form_container = '<div class="qomon-form" data-base_id="' . esc_html($qomon_shortcode_atts['id']) . '"></div>';
+			
+			$qomon_form_container = '<div class="qomon-form" form-type="' . esc_attr($form_type) . '" data-base_id="' . esc_html($qomon_shortcode_atts['id']) . '"></div>';
 
 			// return output
 			return $qomon_form_container;

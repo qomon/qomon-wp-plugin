@@ -16,6 +16,10 @@
 		"base_id": {
 			"type": "string"
 		},
+		"form_type": {
+			"type": "string",
+			"default": ""
+		  },
 		"env": {
 			"type": "string",
 			"default": null

@@ -8,6 +8,6 @@
  * @return {WPElement} Element to render.
  */
 
-export default function save({ attributes }) {
-	return <div class="qomon-form" data-base_id={attributes.base_id}></div>;
+export default function save( { attributes } ) {
+	return <div class="qomon-form" data-base_id={ attributes.base_id } form-type={ attributes.form_type }></div>;
 }
