@@ -3,7 +3,7 @@ Contributors:      qomon
 Donate link:       https://qomon.com
 Tags:              block, form, qomon
 Tested up to:      6.3
-Stable tag:        1.0.0
+Stable tag:        1.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP:      7.0
@@ -58,5 +58,8 @@ You can find it at this path: https://help.qomon.com/en/articles/7439238-how-can
 
 == Changelog ==
 
+= 1.1.0 =
+* Embed Petition: The Qomon plugin now supports embedding petitions.
+
 = 1.0.0 =
-* Plugin released 🎉
+* Plugin released

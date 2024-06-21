@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
 	"name": "create-block/qomon-form",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"title": "Qomon Form",
 	"category": "embed",
 	"icon": "text",
@@ -16,6 +16,10 @@
 		"base_id": {
 			"type": "string"
 		},
+		"form_type": {
+			"type": "string",
+			"default": ""
+		  },
 		"env": {
 			"type": "string",
 			"default": null
